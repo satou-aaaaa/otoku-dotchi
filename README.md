@@ -9,6 +9,6 @@
   - [国税庁 タックスアンサー No.6902「総額表示」の義務付け](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6902.htm)（値段は税込で表示する）
   - [国税庁「軽減税率制度の概要」](https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/01.htm)（標準税率10%・軽減税率8%。軽減税率は時期によって変わるため問題にしていません）
 - 品物・お店・値段は練習用の作り話です。1円未満の端数の扱いやポイントのきまりは、お店によってちがいます。
-- 記録は遊ぶ人のブラウザ（localStorage）にだけ残ります。記録を外へ送ることはありません。画面の文字の形（Google Fonts）は外から読み込むので、開くと Google のサーバーに接続します。好きなだけ遊べます（回数制限なし）。
+- 記録は遊ぶ人のブラウザ（localStorage）にだけ残ります。記録を外へ送ることはありません（結果の画面で X・LINE への共有を押したときだけ、その日の結果の並びが共有先へ送られます）。画面の文字の形（Google Fonts）は外から読み込むので、開くと Google のサーバーに接続します。好きなだけ遊べます（回数制限なし）。
 
 作り方・決まりは [AGENTS.md](AGENTS.md)。

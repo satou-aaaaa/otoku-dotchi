@@ -22,7 +22,7 @@
 
   // 2段目「どう計算した？」
   const GROUPS = {
-    kakeru: { name: "値段 ×（1 − 割合）", sub: "引いたあとの値段を、かけ算で出す" },
+    kakeru: { name: "値段 × 倍率", sub: "引くときは（1 − 割合）、税込は 1.1 をかける" },
     sa: { name: "2つの差", sub: "2つの値段を出して、引き算する" },
     hitotsu: { name: "1つあたりにそろえる", sub: "100gあたり・1個あたりの値段にしてくらべる" },
     modoshi: { name: "わり算でもどる", sub: "値段から、もとの値段や割合を出す" },
@@ -84,7 +84,7 @@
     },
     // 税込から税抜
     zeinuki(R) {
-      const P = ri(R, 3, 300) * 10, y = P * (100 + TAX) / 100, it = pick(R, ITEM), md = ri(R, 0, MEDIA.length - 1);
+      const P = ri(R, 1, 60) * 100, y = P * (100 + TAX) / 100, it = pick(R, ITEM), md = ri(R, 0, MEDIA.length - 1);
       return { media: MEDIA[md], q: `${it}が税込${yen(y)}（消費税10%）。税抜の値段は？`, opts: optsOf(R, yen(P), [yen(y * 9 / 10), yen(y - 10), yen(y - 100), yen(P - 10), yen(P + 10), yen(P - 20), yen(y * TAX / 100)], 4), ans: yen(P), grp: "modoshi", v: `${it}:${P}:${md}`,
         why: `税込は税抜の1.1倍なので、${yen(y)} ÷ 1.1 ＝ ${yen(P)}。${yen(y)} × 0.9 ＝ ${yen(y * 9 / 10)}とすると、まちがいです。` };
     },

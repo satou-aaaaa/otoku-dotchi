@@ -55,6 +55,7 @@ function resolve(kind, q) {
       if (P.opts.length !== n || new Set(P.opts).size !== n || !P.opts.includes(P.ans)) why.push(`選び肢が${n}つちがう・答えを含まない`);
       if ([P.q, P.media, P.why, ...P.opts].some((x) => typeof x !== "string" || !x || /undefined|NaN|null|Infinity|\$\{|＠|(^|[^\d])-\d|\d\.\d{3}/.test(x))) why.push("中身が空・負の数・小数3けた");
       if (P.opts.some((o) => /^約?0(\.0+)?(円|%)|が0円|^-|\.\d+円/.test(o))) why.push("0・マイナス・1円未満の選び肢");
+      if (/\d\.\d+円/.test(P.why + P.q)) why.push("説明・問いに1円未満の端数（otoku-dotchi#1 の CodeRabbit）");
       const sv = resolve(k.id, P.q);
       if (!sv) why.push("解き直せない");
       else {
